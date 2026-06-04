@@ -36,6 +36,10 @@
             font-size: 22px;
             line-height: 1.7;
             overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
 
         .container {
@@ -138,7 +142,7 @@
         }
 
         .hero-date strong {
-            color: var(--burgundy-dark);
+            color: #4a131f;
         }
 
         /* ===== INVITATION ===== */
@@ -202,7 +206,7 @@
 
         /* ===== COUNTDOWN ===== */
         .countdown {
-            background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+            background: linear-gradient(135deg, #6b1e2d 0%, #4a131f 100%);
             color: var(--cream);
             text-align: center;
         }
@@ -220,10 +224,11 @@
         }
 
         .countdown-box {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid var(--gold);
-            border-radius: 8px;
-            padding: 24px 8px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(212, 168, 90, 0.5);
+            border-radius: 14px;
+            padding: 26px 8px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 6px 18px rgba(0,0,0,0.18);
         }
 
         .countdown-num {
@@ -233,10 +238,12 @@
             color: var(--gold-light);
             line-height: 1;
             display: block;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
         }
 
         .countdown-label {
-            font-size: 18px;
+            font-size: 17px;
             margin-top: 12px;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -558,7 +565,7 @@
 
         /* ===== FOOTER ===== */
         .footer {
-            background: var(--burgundy-dark);
+            background: #4a131f;
             color: var(--cream);
             text-align: center;
             padding: 50px 24px;
@@ -585,32 +592,73 @@
             opacity: 0.85;
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* ===== RESPONSIVE — TABLET / PHONE ===== */
         @media (max-width: 600px) {
-            body { font-size: 20px; }
+            body { font-size: 19px; }
+            .container { padding: 0 18px; }
+            section { padding: 48px 0; }
+
             .hero { padding: 40px 0 40px; }
-            .hero-age { font-size: 72px; }
-            .hero-name { font-size: 48px; }
-            .hero-message { font-size: 22px; }
-            .hero-date { font-size: 22px; padding: 16px 24px; }
-            .photo-frame { width: 220px; height: 220px; }
+            .ornament-top { font-size: 26px; letter-spacing: 8px; margin-bottom: 18px; }
+            .hero-subtitle { font-size: 21px; letter-spacing: 3px; }
+            .hero-age { font-size: 84px; }
+            .hero-age-label { font-size: 24px; margin-bottom: 28px; }
+            .hero-name { font-size: 52px; }
+            .hero-message { font-size: 21px; }
+            .hero-date { font-size: 20px; letter-spacing: 1px; padding: 14px 22px; }
+            .photo-frame { width: 230px; height: 230px; }
+
+            .invitation-card { padding: 32px 22px; }
+            .invitation-greeting { font-size: 23px; margin-bottom: 22px; }
+            .invitation-text { font-size: 20px; margin-bottom: 18px; }
+            .invitation-call { font-size: 22px; }
+
             .section-title { font-size: 38px; }
-            section { padding: 50px 0; }
-            .countdown-grid { gap: 8px; }
-            .countdown-box { padding: 18px 4px; }
-            .countdown-num { font-size: 44px; }
-            .countdown-label { font-size: 14px; letter-spacing: 1px; }
-            .details-card { padding: 32px 20px; }
-            .detail-row { gap: 16px; flex-direction: column; align-items: flex-start; }
-            .detail-icon { font-size: 36px; }
-            .detail-value { font-size: 24px; }
-            .program-item { padding: 20px 20px 20px 68px; }
-            .program-item::before { font-size: 36px; left: 20px; }
-            .program-title { font-size: 22px; }
+            .section-divider { font-size: 20px; letter-spacing: 6px; margin-bottom: 32px; }
+
+            .countdown-grid { gap: 12px; }
+            .countdown-box { padding: 20px 4px; border-radius: 12px; }
+            .countdown-num { font-size: 46px; }
+            .countdown-label { font-size: 13px; letter-spacing: 1px; margin-top: 8px; }
+
+            .details-card { padding: 30px 20px; }
+            .detail-row { gap: 18px; padding: 20px 0; }
+            .detail-icon { font-size: 40px; }
+            .detail-value { font-size: 23px; }
+            .detail-extra { font-size: 19px; }
+            .map-link { font-size: 18px; padding: 12px 20px; }
+
+            .rsvp-intro { font-size: 21px; }
             .rsvp-form { padding: 28px 20px; }
+            .form-label { font-size: 20px; }
+            .form-input { font-size: 20px; padding: 14px 16px; }
             .rsvp-buttons { grid-template-columns: 1fr; }
-            .btn { font-size: 20px; padding: 20px 12px; }
+            .btn { font-size: 20px; padding: 18px 12px; }
+
+            .guests-info { font-size: 20px; }
+            .guests-counter { font-size: 23px; }
             .guests-counter strong { font-size: 36px; }
+            .guest-list { grid-template-columns: 1fr; }
+            .guest-item { font-size: 20px; }
+
+            .footer-message { font-size: 27px; }
+            .footer-signature { font-size: 20px; }
+        }
+
+        /* ===== RESPONSIVE — SMALL PHONES ===== */
+        @media (max-width: 380px) {
+            .hero-age { font-size: 72px; }
+            .hero-name { font-size: 44px; }
+            .hero-date { font-size: 18px; padding: 12px 16px; }
+            .photo-frame { width: 200px; height: 200px; }
+            .section-title { font-size: 32px; }
+
+            /* 2×2 countdown — more breathing room than 4 cramped columns */
+            .countdown-grid { grid-template-columns: 1fr 1fr; gap: 12px; max-width: 320px; }
+            .countdown-num { font-size: 52px; }
+            .countdown-label { font-size: 14px; }
+
+            .invitation-greeting { font-size: 21px; }
         }
     </style>
 </head>
