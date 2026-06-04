@@ -72,11 +72,27 @@
         }
 
         .hero-subtitle {
-            font-size: 26px;
+            font-size: 24px;
             color: var(--text-medium);
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
+        }
+
+        .hero-ticket {
+            display: inline-block;
+            margin: 0 0 30px;
+            padding: 9px 26px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.4);
+            box-shadow: 0 4px 14px rgba(184, 137, 61, 0.18);
         }
 
         .hero-age {
@@ -151,14 +167,9 @@
             text-align: center;
         }
 
-        .invitation-card {
-            max-width: 640px;
+        .invitation-body {
+            max-width: 600px;
             margin: 0 auto;
-            background: white;
-            border: 1px solid var(--gold);
-            border-radius: 12px;
-            padding: 48px 40px;
-            box-shadow: 0 8px 24px rgba(107, 30, 45, 0.08);
         }
 
         .invitation-greeting {
@@ -600,7 +611,8 @@
 
             .hero { padding: 40px 0 40px; }
             .ornament-top { font-size: 26px; letter-spacing: 8px; margin-bottom: 18px; }
-            .hero-subtitle { font-size: 21px; letter-spacing: 3px; }
+            .hero-subtitle { font-size: 19px; letter-spacing: 2px; margin-bottom: 12px; }
+            .hero-ticket { font-size: 25px; letter-spacing: 3px; padding: 8px 20px; margin-bottom: 26px; }
             .hero-age { font-size: 84px; }
             .hero-age-label { font-size: 24px; margin-bottom: 28px; }
             .hero-name { font-size: 52px; }
@@ -608,7 +620,6 @@
             .hero-date { font-size: 20px; letter-spacing: 1px; padding: 14px 22px; }
             .photo-frame { width: 230px; height: 230px; }
 
-            .invitation-card { padding: 32px 22px; }
             .invitation-greeting { font-size: 23px; margin-bottom: 22px; }
             .invitation-text { font-size: 20px; margin-bottom: 18px; }
             .invitation-call { font-size: 22px; }
@@ -664,29 +675,11 @@
 </head>
 <body>
 
-    <!-- ===== INVITATION ===== -->
-    <section class="invitation">
-        <div class="container">
-            <div class="invitation-card">
-                <p class="invitation-greeting">
-                    Құрметті ағайын-туыс, бауырлар, құда-жекжат,
-                    нағашы-жиен, бөлелер, дос-жарандар, ұжымдастар, көршілер!
-                </p>
-                <p class="invitation-text">
-                    Сіздерді Айнажан анамыздың 75 жылдық мерейтойына
-                    арналған салтанатты ақ дастарханымыздың қадірлі қонағы
-                    болуға шақырамыз!
-                </p>
-                <p class="invitation-call">Қуанышымызға ортақ болыңыздар!</p>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container">
             <div class="ornament-top">✦ ✦ ✦</div>
-            <div class="hero-subtitle">Мерейтой</div>
+            <div class="hero-subtitle">Айнажан анамыздың 75 жас мерейтойына шақыруа</div>
             <div class="hero-age">75</div>
             <div class="hero-age-label">— жаста —</div>
 
@@ -702,6 +695,24 @@
 
             <div class="hero-date">
                 <strong>15 ТАМЫЗ 2026 · 17:00</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INVITATION ===== -->
+    <section class="invitation">
+        <div class="container">
+            <div class="invitation-body">
+                <p class="invitation-greeting">
+                    Құрметті ағайын-туыс, бауырлар, құда-жекжат,
+                    нағашы-жиен, бөлелер, дос-жарандар, ұжымдастар, көршілер!
+                </p>
+                <p class="invitation-text">
+                    Сіздерді Айнажан анамыздың 75 жылдық мерейтойына
+                    арналған салтанатты ақ дастарханымыздың қадірлі қонағы
+                    болуға шақырамыз!
+                </p>
+                <p class="invitation-call">Қуанышымызға ортақ болыңыздар!</p>
             </div>
         </div>
     </section>
