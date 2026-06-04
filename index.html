@@ -141,6 +141,45 @@
             color: var(--burgundy-dark);
         }
 
+        /* ===== INVITATION ===== */
+        .invitation {
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .invitation-card {
+            max-width: 640px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            padding: 48px 40px;
+            box-shadow: 0 8px 24px rgba(107, 30, 45, 0.08);
+        }
+
+        .invitation-greeting {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--burgundy);
+            line-height: 1.35;
+            margin-bottom: 28px;
+        }
+
+        .invitation-text {
+            font-size: 24px;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .invitation-call {
+            font-size: 26px;
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
         /* ===== SECTION ===== */
         section {
             padding: 70px 0;
@@ -255,6 +294,28 @@
             font-size: 22px;
             color: var(--text-medium);
             margin-top: 4px;
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 14px;
+            padding: 12px 22px;
+            background: var(--burgundy);
+            color: var(--cream);
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+        }
+
+        .map-link:hover {
+            background: var(--burgundy-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(107, 30, 45, 0.3);
         }
 
         /* ===== PROGRAM ===== */
@@ -579,6 +640,24 @@
         </div>
     </section>
 
+    <!-- ===== INVITATION ===== -->
+    <section class="invitation">
+        <div class="container">
+            <div class="invitation-card">
+                <p class="invitation-greeting">
+                    Құрметті ағайын-туыс, бауырлар, құда-жекжат,
+                    нағашы-жиен, бөлелер, дос-жарандар, ұжымдастар, көршілер!
+                </p>
+                <p class="invitation-text">
+                    Сіздерді Айнажан анамыздың 75 жылдық мерейтойына
+                    арналған салтанатты ақ дастарханымыздың қадірлі қонағы
+                    болуға шақырамыз!
+                </p>
+                <p class="invitation-call">Қуанышымызға ортақ болыңыздар!</p>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== COUNTDOWN ===== -->
     <section class="countdown">
         <div class="container">
@@ -636,6 +715,9 @@
                         <div class="detail-label">Орны</div>
                         <div class="detail-value">Tamasha Grand Hall мейрамханасы</div>
                         <div class="detail-extra">Бізді жайлы орта күтіп тұр</div>
+                        <a class="map-link" href="https://go.2gis.com/ZmnIX" target="_blank" rel="noopener">
+                            🗺️ 2ГИС-тен қарау
+                        </a>
                     </div>
                 </div>
 
