@@ -116,6 +116,35 @@
             margin-bottom: 36px;
         }
 
+        /* Ornamental rosette medallion (replaces the photo) */
+        .hero-medallion {
+            width: 250px;
+            height: 250px;
+            margin: 6px auto 36px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: center / contain no-repeat
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23b8893d'%3E%3Ccircle cx='100' cy='100' r='95' stroke-width='1.4'/%3E%3Ccircle cx='100' cy='100' r='70' stroke-width='1.4'/%3E%3Ccircle cx='100' cy='100' r='86' stroke-width='3.4' stroke-linecap='round' stroke-dasharray='1 8'/%3E%3C/g%3E%3Cg fill='%23b8893d'%3E%3Cpath d='M100 1 L106 7 L100 13 L94 7 Z'/%3E%3Cpath d='M100 187 L106 193 L100 199 L94 193 Z'/%3E%3Cpath d='M7 94 L13 100 L7 106 L1 100 Z'/%3E%3Cpath d='M193 94 L199 100 L193 106 L187 100 Z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-medallion-age {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 104px;
+            font-weight: 700;
+            color: var(--burgundy);
+            line-height: 0.95;
+        }
+
+        .hero-medallion-label {
+            font-size: 30px;
+            font-style: italic;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin-top: 2px;
+        }
+
         .photo-frame {
             width: 280px;
             height: 280px;
@@ -667,14 +696,11 @@
             .ornament-top { height: 22px; margin-bottom: 18px; }
             .section-divider { height: 22px; }
             .photo-frame::before { inset: -12px; border-width: 2px; }
-            .hero-subtitle { font-size: 19px; letter-spacing: 2px; margin-bottom: 12px; }
-            .hero-ticket { font-size: 25px; letter-spacing: 3px; padding: 8px 20px; margin-bottom: 26px; }
-            .hero-age { font-size: 84px; }
-            .hero-age-label { font-size: 24px; margin-bottom: 28px; }
-            .hero-name { font-size: 52px; }
-            .hero-message { font-size: 21px; }
+            .hero-subtitle { font-size: 19px; letter-spacing: 2px; margin-bottom: 18px; }
+            .hero-medallion { width: 210px; height: 210px; margin: 4px auto 30px; }
+            .hero-medallion-age { font-size: 88px; }
+            .hero-medallion-label { font-size: 26px; }
             .hero-date { font-size: 20px; letter-spacing: 1px; padding: 14px 22px; }
-            .photo-frame { width: 230px; height: 230px; }
 
             .invitation-greeting { font-size: 27px; margin-bottom: 24px; }
             .invitation-text { font-size: 23px; margin-bottom: 20px; }
@@ -714,10 +740,10 @@
 
         /* ===== RESPONSIVE — SMALL PHONES ===== */
         @media (max-width: 380px) {
-            .hero-age { font-size: 72px; }
-            .hero-name { font-size: 44px; }
+            .hero-medallion { width: 188px; height: 188px; }
+            .hero-medallion-age { font-size: 78px; }
+            .hero-medallion-label { font-size: 23px; }
             .hero-date { font-size: 18px; padding: 12px 16px; }
-            .photo-frame { width: 200px; height: 200px; }
             .section-title { font-size: 32px; }
 
             /* 2×2 countdown — more breathing room than 4 cramped columns */
@@ -740,14 +766,11 @@
         <div class="container">
             <div class="ornament-top">✦ ✦ ✦</div>
             <div class="hero-subtitle">Айнажан анамыздың 75 жас мерейтойына шақыру</div>
-            <div class="hero-age">75</div>
-            <div class="hero-age-label">— жаста —</div>
 
-            <div class="photo-frame">
-                <img src="3AE80739-D8DA-48E6-9BF6-84839DFABFEB.jpg" alt="Айнажан">
+            <div class="hero-medallion">
+                <span class="hero-medallion-age">75</span>
+                <span class="hero-medallion-label">жас</span>
             </div>
-
-            <h1 class="hero-name">Айнажан</h1>
 
             <div class="hero-date">
                 <strong>15 ТАМЫЗ 2026 · 17:00</strong>
