@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=412">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: #fff8f8; padding: 24px; }
+:root { --crimson: #b01e35; --crimson-dark: #7e1225; --gold: #c8912a; --text-dark: #2a0e14; }
+.guest-list { list-style:none; display:grid; gap:12px; }
+.guest-item {
+  background: white; padding: 18px 22px; border-radius: 12px;
+  border: 2px solid var(--crimson); border-left: 6px solid var(--crimson);
+  font-size: 22px; font-weight: 700; color: var(--text-dark);
+  display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 3px 10px rgba(176,30,53,0.14);
+}
+.guest-item::before {
+  content: "checkmark"; color: white; font-weight: 700; font-size: 16px;
+  background: var(--crimson); border-radius: 50%;
+  width: 30px; height: 30px; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; text-indent:-9999px;
+}
+.g-counter {
+  text-align:center; font-size:24px; color:var(--crimson-dark); font-weight:700;
+  margin-bottom:20px; padding:18px; background:linear-gradient(135deg,#fff8f8,#fffaf3);
+  border-radius:12px; border:1px dashed var(--gold);
+}
+.g-counter strong { font-size:40px; color:var(--crimson); margin:0 8px; }
+</style></head><body>
+<div class="g-counter">Confirmed: <strong>4</strong></div>
+<ul class="guest-list">
+<li class="guest-item">Aygul Bekova</li>
+<li class="guest-item">Erzhan Seitkali</li>
+<li class="guest-item">Dina Nurlanova</li>
+<li class="guest-item">Marat Ospanov</li>
+</ul>
+</body></html>
