@@ -204,7 +204,8 @@
         }
 
         /* Акварельные малиново-красные края */
-        .hero::before, .hero::after {
+        .hero::before, .hero::after,
+        .invitation::before, .invitation::after {
             content: "";
             position: absolute;
             left: 0; right: 0;
@@ -214,8 +215,8 @@
             background: top center / 100% 100% no-repeat
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 170' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cfilter id='w' x='-30%25' y='-30%25' width='160%25' height='160%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.013 0.05' numOctaves='3' seed='7'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='55'/%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23w)'%3E%3Crect x='-80' y='-100' width='960' height='165' fill='%23e84060' opacity='0.28'/%3E%3Crect x='-80' y='-100' width='960' height='148' fill='%23c0273a' opacity='0.6'/%3E%3Crect x='-80' y='-100' width='960' height='128' fill='%238e1a28'/%3E%3C/g%3E%3Cg fill='%23e4b04a'%3E%3Ccircle cx='30' cy='55' r='2.2'/%3E%3Ccircle cx='80' cy='38' r='1.6'/%3E%3Ccircle cx='135' cy='62' r='2'/%3E%3Ccircle cx='190' cy='42' r='1.4'/%3E%3Ccircle cx='245' cy='58' r='2.4'/%3E%3Ccircle cx='300' cy='36' r='1.5'/%3E%3Ccircle cx='360' cy='66' r='1.8'/%3E%3Ccircle cx='410' cy='40' r='2.2'/%3E%3Ccircle cx='465' cy='60' r='1.4'/%3E%3Ccircle cx='515' cy='38' r='1.9'/%3E%3Ccircle cx='565' cy='64' r='2.3'/%3E%3Ccircle cx='620' cy='44' r='1.5'/%3E%3Ccircle cx='670' cy='58' r='2.1'/%3E%3Ccircle cx='720' cy='36' r='1.6'/%3E%3Ccircle cx='765' cy='62' r='2.2'/%3E%3C/g%3E%3Cg fill='%23f5d87a' opacity='0.9'%3E%3Ccircle cx='55' cy='48' r='1.1'/%3E%3Ccircle cx='160' cy='52' r='1'/%3E%3Ccircle cx='270' cy='50' r='1.1'/%3E%3Ccircle cx='380' cy='54' r='0.9'/%3E%3Ccircle cx='490' cy='50' r='1.1'/%3E%3Ccircle cx='590' cy='56' r='1'/%3E%3Ccircle cx='695' cy='50' r='1.1'/%3E%3Ccircle cx='785' cy='48' r='1'/%3E%3C/g%3E%3C/svg%3E");
         }
-        .hero::before { top: 0; }
-        .hero::after  { bottom: 0; transform: scaleY(-1); }
+        .hero::before, .invitation::before { top: 0; }
+        .hero::after,  .invitation::after  { bottom: 0; transform: scaleY(-1); }
 
         /* Вымпелы — теперь малиновые */
         .pennant {
@@ -245,6 +246,9 @@
         }
         .hero .flower-spray        { bottom: 115px; left: -16px; }
         .hero .flower-spray.right  { bottom: 115px; left: auto; right: -16px; transform: scaleX(-1); }
+
+        .invitation .flower-spray       { bottom: 40px; left: -16px; }
+        .invitation .flower-spray.right { bottom: 40px; left: auto; right: -16px; transform: scaleX(-1); }
 
         .hero-script    { animation: fadeUp 0.9s ease both; }
         .hero-subtitle  { animation: fadeUp 0.9s 0.12s ease both; }
@@ -378,15 +382,16 @@
 
         /* ===== INVITATION ===== */
         .invitation {
-            background: linear-gradient(180deg, #fff8f8 0%, var(--cream) 100%);
+            background: linear-gradient(180deg, #fff8f8 0%, #fffaf3 50%, #fff5f0 100%);
             text-align: center;
-            padding-top: 96px;
+            position: relative;
+            overflow: hidden;
+            padding: 150px 0;
         }
 
-        .invitation-body { max-width: 600px; margin: 0 auto; }
+        .invitation .container { position: relative; z-index: 5; }
 
-        /* Highlighted jubilee date — now the opening accent */
-        .hero-date--top { margin: 0 auto 38px; }
+        .invitation-body { max-width: 600px; margin: 0 auto; }
 
         .invitation-greeting {
             font-family: 'Cormorant Garamond', 'PT Serif', Georgia, serif;
@@ -443,6 +448,32 @@
         }
 
         .countdown .section-title { color: var(--gold-light); }
+
+        /* Highlighted jubilee date — styled for the dark countdown background */
+        .countdown-date {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            margin: 2px auto 4px;
+            padding: 14px 32px;
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+            font-size: clamp(19px, 5vw, 26px);
+            letter-spacing: 2px;
+            color: var(--gold-light);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-date::after {
+            content: "";
+            position: absolute;
+            top: 0; left: -80%;
+            width: 55%; height: 100%;
+            background: linear-gradient(105deg, transparent, rgba(255, 235, 160, 0.55), transparent);
+            animation: shine 5s 1.6s ease-in-out infinite;
+            pointer-events: none;
+        }
 
         .countdown-grid {
             display: grid;
@@ -881,8 +912,10 @@
             body { font-size: 20px; }
             .container { padding: 0 18px; }
             section { padding: 50px 0; }
-            .invitation { padding-top: 64px; }
-            .hero-date--top { margin-bottom: 30px; }
+            .invitation { padding: 110px 0 120px; }
+            .invitation::before, .invitation::after { height: 95px; }
+            .invitation .flower-spray       { bottom: -8px; left: -12px; }
+            .invitation .flower-spray.right { bottom: -8px; right: -12px; }
 
             .hero { padding: 115px 0 140px; }
             .hero::before, .hero::after { height: 95px; }
@@ -949,11 +982,25 @@
 
     <!-- ===== INVITATION ===== -->
     <section class="invitation">
+        <span class="hero-corner tl"></span>
+        <span class="hero-corner tr"></span>
+        <span class="hero-corner bl"></span>
+        <span class="hero-corner br"></span>
+
+        <span class="pennant left"></span>
+        <span class="pennant right"></span>
+        <span class="flower-spray"></span>
+        <span class="flower-spray right"></span>
+
+        <span class="hero-sparkle keep" style="top: 14%; left: 9%;  font-size: 20px; animation-duration: 3.6s;">✦</span>
+        <span class="hero-sparkle"      style="top: 22%; right: 12%; font-size: 16px; animation-duration: 4.4s; animation-delay: 0.8s;">✦</span>
+        <span class="hero-sparkle keep" style="top: 48%; left: 6%;  font-size: 14px; animation-duration: 5s;   animation-delay: 1.6s;">✦</span>
+        <span class="hero-sparkle keep" style="top: 42%; right: 7%; font-size: 22px; animation-duration: 4s;   animation-delay: 2.4s;">✦</span>
+        <span class="hero-sparkle"      style="top: 68%; left: 14%; font-size: 18px; animation-duration: 4.8s; animation-delay: 1.2s;">✦</span>
+        <span class="hero-sparkle keep" style="top: 76%; right: 16%; font-size: 15px; animation-duration: 3.8s; animation-delay: 0.4s;">✦</span>
+
         <div class="container">
             <div class="invitation-body reveal">
-                <div class="hero-date hero-date--top">
-                    <strong>15 ТАМЫЗ 2026 · 17:00</strong>
-                </div>
                 <p class="invitation-greeting">
                     Құрметті ағайын-туыс, бауырлар, құда-жекжат,
                     нағашы-жиен, бөлелер, дос-жарандар, ұжымдастар, көршілер!
@@ -973,6 +1020,7 @@
         <div class="container">
             <h2 class="section-title">Мерекеге дейін қалды</h2>
             <div class="section-divider">• • •</div>
+            <div class="countdown-date">15 ТАМЫЗ 2026 · 17:00</div>
             <div class="countdown-grid reveal">
                 <div class="countdown-box">
                     <span class="countdown-num" id="cd-days">00</span>
