@@ -380,9 +380,13 @@
         .invitation {
             background: linear-gradient(180deg, #fff8f8 0%, var(--cream) 100%);
             text-align: center;
+            padding-top: 96px;
         }
 
         .invitation-body { max-width: 600px; margin: 0 auto; }
+
+        /* Highlighted jubilee date — now the opening accent */
+        .hero-date--top { margin: 0 auto 38px; }
 
         .invitation-greeting {
             font-family: 'Cormorant Garamond', 'PT Serif', Georgia, serif;
@@ -877,6 +881,8 @@
             body { font-size: 20px; }
             .container { padding: 0 18px; }
             section { padding: 50px 0; }
+            .invitation { padding-top: 64px; }
+            .hero-date--top { margin-bottom: 30px; }
 
             .hero { padding: 115px 0 140px; }
             .hero::before, .hero::after { height: 95px; }
@@ -941,49 +947,13 @@
 </head>
 <body>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero">
-        <span class="hero-corner tl"></span>
-        <span class="hero-corner tr"></span>
-        <span class="hero-corner bl"></span>
-        <span class="hero-corner br"></span>
-
-        <span class="pennant left"></span>
-        <span class="pennant right"></span>
-        <span class="flower-spray"></span>
-        <span class="flower-spray right"></span>
-
-        <span class="hero-sparkle keep" style="top: 14%; left: 9%;  font-size: 20px; animation-duration: 3.6s;">✦</span>
-        <span class="hero-sparkle"      style="top: 22%; right: 12%; font-size: 16px; animation-duration: 4.4s; animation-delay: 0.8s;">✦</span>
-        <span class="hero-sparkle keep" style="top: 48%; left: 6%;  font-size: 14px; animation-duration: 5s;   animation-delay: 1.6s;">✦</span>
-        <span class="hero-sparkle keep" style="top: 42%; right: 7%; font-size: 22px; animation-duration: 4s;   animation-delay: 2.4s;">✦</span>
-        <span class="hero-sparkle"      style="top: 68%; left: 14%; font-size: 18px; animation-duration: 4.8s; animation-delay: 1.2s;">✦</span>
-        <span class="hero-sparkle keep" style="top: 76%; right: 16%; font-size: 15px; animation-duration: 3.8s; animation-delay: 0.4s;">✦</span>
-
-        <div class="container">
-            <div class="hero-script">Құрметті қонақтар!</div>
-            <div class="hero-subtitle">Сіздерді ардақты анамыз</div>
-            <h1 class="hero-name">Айнажан</h1>
-
-            <div class="hero-medallion">
-                <span class="hero-medallion-age gold-glitter">75</span>
-                <span class="hero-medallion-label">жас</span>
-            </div>
-
-            <p class="hero-lead">
-                мерейтойына арналған салтанатты дастарханымызға шақырамыз!
-            </p>
-
-            <div class="hero-date">
-                <strong>15 ТАМЫЗ 2026 · 17:00</strong>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== INVITATION ===== -->
     <section class="invitation">
         <div class="container">
             <div class="invitation-body reveal">
+                <div class="hero-date hero-date--top">
+                    <strong>15 ТАМЫЗ 2026 · 17:00</strong>
+                </div>
                 <p class="invitation-greeting">
                     Құрметті ағайын-туыс, бауырлар, құда-жекжат,
                     нағашы-жиен, бөлелер, дос-жарандар, ұжымдастар, көршілер!
